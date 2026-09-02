@@ -2,159 +2,541 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Phone, X, ZoomIn } from "lucide-react";
+import {
+  Phone,
+  X,
+  ZoomIn,
+  PlayCircle,
+} from "lucide-react";
 
 import { C, disp } from "@/lib/theme";
 import { Ribbon, GradButton } from "@/components/UI";
 
 /* =========================================================
-   GALLERY PHOTOS
+   PHOTO GALLERY
    ========================================================= */
 
 const galleryPhotos = [
-  /* Real Centre / Classroom */
+  /* =======================================================
+     OUR CENTRE
+     ======================================================= */
+
   {
-    src: "/images/storefront.jpg",
+    src: "/images/gallery/banner 4.jpg",
+    title: "Our Classroom",
+    category: "Our Centre",
+    description:
+      "A glimpse inside the Revi's Group Tuitions classroom.",
+  },
+
+  {
+    src: "/images/gallery/banner 5.jpg",
+    title: "Classroom Entrance",
+    category: "Our Centre",
+    description:
+      "The entrance to our learning centre at Khadakpada.",
+  },
+
+  {
+    src: "/images/gallery/banner 6.jpg",
+    title: "Learning Environment",
+    category: "Our Centre",
+    description:
+      "A focused and positive environment for students.",
+  },
+
+  {
+    src: "/images/gallery/banner 7.jpg",
+    title: "Our Centre Exterior",
+    category: "Our Centre",
+    description:
+      "A look at the Revi's Group Tuitions centre.",
+  },
+
+  {
+    src: "/images/gallery/banner 26.jpg",
     title: "Our Centre",
     category: "Our Centre",
-    description: "Revi's Group Tuitions — Khadakpada, Kalyan (West).",
+    description:
+      "A glimpse of our centre from outside.",
   },
+
   {
-    src: "/images/balloon.jpg",
-    title: "Opening Day Celebrations",
-    category: "Events",
-    description: "A glimpse from our opening day celebrations.",
+    src: "/images/gallery/banner 27.jpg",
+    title: "Revi's Group Tuitions Centre",
+    category: "Our Centre",
+    description:
+      "Our learning space at Khadakpada, Kalyan.",
   },
+
+  {
+    src: "/images/gallery/banner 29.jpg",
+    title: "Centre Entrance",
+    category: "Our Centre",
+    description:
+      "The entrance and exterior of our centre.",
+  },
+
+  {
+    src: "/images/gallery/banner 30.jpg",
+    title: "Revi's Group Tuitions",
+    category: "Our Centre",
+    description:
+      "A view of our institute.",
+  },
+
+  {
+    src: "/images/gallery/banner 31.jpg",
+    title: "Our Learning Centre",
+    category: "Our Centre",
+    description:
+      "Our centre in Khadakpada, Kalyan (West).",
+  },
+
+  {
+    src: "/images/gallery/banner 32.jpg",
+    title: "Centre Highlights",
+    category: "Our Centre",
+    description:
+      "Another glimpse of our learning centre.",
+  },
+
+  {
+    src: "/images/gallery/banner 33.jpg",
+    title: "Centre Display",
+    category: "Our Centre",
+    description:
+      "A glimpse of our institute and student results.",
+  },
+
+  {
+    src: "/images/gallery/banner 34.jpg",
+    title: "Our Centre",
+    category: "Our Centre",
+    description:
+      "Revi's Group Tuitions — Kalyan (West).",
+  },
+
+  /* =======================================================
+     CLASSROOM & TEACHING
+     ======================================================= */
+
   {
     src: "/images/family.jpg",
     title: "Focused Learning",
     category: "Classroom",
-    description: "Focused learning and personal attention in every session.",
+    description:
+      "Focused learning and personal attention in every session.",
   },
 
-  /* Gallery folder */
+  {
+    src: "/images/gallery/teacher&students.jpg",
+    title: "Teacher & Students",
+    category: "Classroom",
+    description:
+      "Teachers and students learning together.",
+  },
+
+  {
+    src: "/images/gallery/teacher&students (2).jpg",
+    title: "Learning Together",
+    category: "Classroom",
+    description:
+      "Building a positive and engaging classroom experience.",
+  },
+
+  {
+    src: "/images/gallery/teaching.jpg",
+    title: "Teaching Session",
+    category: "Classroom",
+    description:
+      "A glimpse of our teaching approach.",
+  },
+
+  {
+    src: "/images/gallery/teaching (2).jpg",
+    title: "Classroom Teaching",
+    category: "Classroom",
+    description:
+      "Focused teaching and student interaction.",
+  },
+
+  /* =======================================================
+     ACHIEVEMENTS
+     ======================================================= */
+
   {
     src: "/images/gallery/1st in school.jpg",
     title: "1st in School Achievement",
     category: "Achievements",
-    description: "Celebrating outstanding student achievement.",
+    description:
+      "Celebrating outstanding student achievement.",
   },
+
   {
-    src: "/images/gallery/Admission_open.jpg",
-    title: "Admissions Open",
-    category: "Admissions",
-    description: "Admissions open for Std 5th to 10th.",
+    src: "/images/1st in school.jpg",
+    title: "1st in School",
+    category: "Achievements",
+    description:
+      "Celebrating our students' academic excellence.",
   },
+
+  {
+    src: "/images/gallery/Out_standing_result.jpg",
+    title: "Outstanding Results",
+    category: "Achievements",
+    description:
+      "Celebrating outstanding academic performance.",
+  },
+
+  /* =======================================================
+     RESULTS
+     ======================================================= */
+
   {
     src: "/images/gallery/all_90%.jpg",
     title: "90%+ Results",
     category: "Results",
-    description: "Students achieving excellent academic results.",
+    description:
+      "Students achieving excellent academic results.",
   },
-  {
-    src: "/images/gallery/bag.jpg",
-    title: "Revi's Group Tuitions",
-    category: "Brand",
-    description: "Our Revi's Group Tuitions school bag.",
-  },
-  {
-    src: "/images/gallery/features.jpg",
-    title: "Why Choose Revi's",
-    category: "Institute",
-    description: "The features and teaching approach of our institute.",
-  },
-  {
-    src: "/images/gallery/Out_standing_result.jpg",
-    title: "Outstanding Results",
-    category: "Results",
-    description: "Celebrating our students' outstanding performance.",
-  },
+
   {
     src: "/images/gallery/results.jpg",
     title: "Student Results",
     category: "Results",
-    description: "Our students' excellent academic performance.",
+    description:
+      "Our students' excellent academic performance.",
   },
+
   {
     src: "/images/gallery/results_1.jpg",
-    title: "SSC Results",
+    title: "SSC Toppers",
     category: "Results",
-    description: "Another glimpse of our SSC results.",
+    description:
+      "Celebrating our SSC toppers and their achievements.",
   },
+
   {
     src: "/images/gallery/results_3.jpg",
     title: "Student Achievement",
     category: "Results",
-    description: "Celebrating academic success at Revi's.",
+    description:
+      "Celebrating academic success at Revi's.",
   },
+
   {
     src: "/images/gallery/results_4.jpg",
     title: "Student Toppers",
     category: "Results",
-    description: "Our students and their excellent scores.",
+    description:
+      "Our students and their excellent scores.",
   },
+
   {
     src: "/images/gallery/results_5.jpg",
     title: "Student Toppers",
     category: "Results",
-    description: "Celebrating our students' achievements.",
+    description:
+      "Celebrating our students' achievements.",
   },
+
   {
     src: "/images/gallery/results_6.jpg",
     title: "Top Results",
     category: "Results",
-    description: "Students achieving excellent percentages.",
+    description:
+      "Students achieving excellent percentages.",
   },
+
   {
     src: "/images/gallery/results_7.jpg",
-    title: "Top Results",
+    title: "Academic Excellence",
     category: "Results",
-    description: "Another glimpse of our academic results.",
+    description:
+      "Another glimpse of our academic results.",
   },
+
   {
     src: "/images/gallery/results_8.jpg",
     title: "SSC Achievement",
     category: "Results",
-    description: "Our students' impressive SSC performance.",
+    description:
+      "Our students' impressive SSC performance.",
   },
+
   {
     src: "/images/gallery/results_32.jpg",
     title: "Student Achievements",
     category: "Results",
-    description: "Celebrating another batch of successful students.",
+    description:
+      "Celebrating another successful batch of students.",
   },
+
+  /* =======================================================
+     ADDITIONAL RESULTS
+     ======================================================= */
+
+  {
+    src: "/images/gallery/banner 8.jpg",
+    title: "SSC Achievements",
+    category: "Results",
+    description:
+      "Celebrating the achievements of our students.",
+  },
+
+  {
+    src: "/images/gallery/banner 9.jpg",
+    title: "Student Achievement",
+    category: "Results",
+    description:
+      "Another glimpse of our successful students.",
+  },
+
+  {
+    src: "/images/gallery/banner 10.jpg",
+    title: "Student Achievement",
+    category: "Results",
+    description:
+      "Celebrating academic performance.",
+  },
+
+  {
+    src: "/images/gallery/banner 11.jpg",
+    title: "SSC Toppers",
+    category: "Results",
+    description:
+      "Our successful SSC students.",
+  },
+
+  {
+    src: "/images/gallery/banner 12.jpg",
+    title: "Student Achievement",
+    category: "Results",
+    description:
+      "Celebrating student success.",
+  },
+
+  {
+    src: "/images/gallery/banner 13.jpg",
+    title: "SSC Results",
+    category: "Results",
+    description:
+      "A glimpse of our SSC results.",
+  },
+
+  {
+    src: "/images/gallery/banner 14.jpg",
+    title: "Student Success",
+    category: "Results",
+    description:
+      "Celebrating our students' academic journey.",
+  },
+
+  {
+    src: "/images/gallery/banner 15.jpg",
+    title: "SSC Toppers",
+    category: "Results",
+    description:
+      "Our students and their excellent scores.",
+  },
+
+  {
+    src: "/images/gallery/banner 16.jpg",
+    title: "Student Achievement",
+    category: "Results",
+    description:
+      "Celebrating academic success.",
+  },
+
+  {
+    src: "/images/gallery/banner 17.jpg",
+    title: "SSC Toppers",
+    category: "Results",
+    description:
+      "Celebrating another successful batch.",
+  },
+
+  {
+    src: "/images/gallery/banner 18.jpg",
+    title: "Student Success",
+    category: "Results",
+    description:
+      "Our students' achievements.",
+  },
+
+  {
+    src: "/images/gallery/banner 19.jpg",
+    title: "SSC Toppers",
+    category: "Results",
+    description:
+      "Celebrating our successful students.",
+  },
+
+  {
+    src: "/images/gallery/banner 20.jpg",
+    title: "Student Achievement",
+    category: "Results",
+    description:
+      "Another glimpse of academic success.",
+  },
+
+  {
+    src: "/images/gallery/banner 21.jpg",
+    title: "SSC Results",
+    category: "Results",
+    description:
+      "Our students' SSC performance.",
+  },
+
+  {
+    src: "/images/gallery/banner 22.jpg",
+    title: "Student Toppers",
+    category: "Results",
+    description:
+      "Celebrating student achievements.",
+  },
+
+  {
+    src: "/images/gallery/banner 23.jpg",
+    title: "SSC Toppers",
+    category: "Results",
+    description:
+      "Our successful SSC students.",
+  },
+
+  {
+    src: "/images/gallery/banner 24.jpg",
+    title: "Student Results",
+    category: "Results",
+    description:
+      "Academic results from our students.",
+  },
+
+  {
+    src: "/images/gallery/banner 25.jpg",
+    title: "Outstanding Results",
+    category: "Results",
+    description:
+      "Celebrating excellent academic performance.",
+  },
+
+  {
+    src: "/images/gallery/banner 28.jpg",
+    title: "Student Achievement",
+    category: "Results",
+    description:
+      "Celebrating another successful batch.",
+  },
+
+  /* =======================================================
+     ADMISSIONS
+     ======================================================= */
+
+  {
+    src: "/images/gallery/Admission_open.jpg",
+    title: "Admissions Open",
+    category: "Admissions",
+    description:
+      "Admissions open for Std 5th to 10th.",
+  },
+
+  /* =======================================================
+     BRAND
+     ======================================================= */
+
+  {
+    src: "/images/gallery/bag.jpg",
+    title: "Revi's Group Tuitions Bag",
+    category: "Brand",
+    description:
+      "Our Revi's Group Tuitions school bag.",
+  },
+
+  {
+    src: "/images/gallery/bag_2.jpg",
+    title: "Revi's Group Tuitions",
+    category: "Brand",
+    description:
+      "A glimpse of our Revi's Group Tuitions branding.",
+  },
+
   {
     src: "/images/gallery/revis.jpg",
     title: "Revi's Group Tuitions",
     category: "Brand",
-    description: "Our institute branding.",
+    description:
+      "Our institute branding.",
   },
+
   {
     src: "/images/gallery/revis_card.jpg",
     title: "Revi's Group Tuitions Card",
     category: "Brand",
-    description: "Our institute identity and contact card.",
+    description:
+      "Our institute identity and contact card.",
   },
+
   {
     src: "/images/gallery/revis_cup.jpg",
     title: "Revi's Group Tuitions",
     category: "Brand",
-    description: "A little piece of Revi's branding.",
+    description:
+      "A little piece of Revi's branding.",
+  },
+
+  /* =======================================================
+     EVENTS
+     ======================================================= */
+
+  {
+    src: "/images/balloon.jpg",
+    title: "Opening Day Celebrations",
+    category: "Events",
+    description:
+      "A glimpse from our opening day celebrations.",
   },
 ];
 
 /* =========================================================
-   FILTERS
+   VIDEOS — SEPARATE SECTION
+   ========================================================= */
+
+const galleryVideos = [
+  {
+    src: "/images/gallery/17 years of success.mp4",
+    title: "17 Years of Success",
+    description:
+      "A special glimpse into the journey of Revi's Group Tuitions.",
+  },
+
+  {
+    src: "/images/gallery/activity.mp4",
+    title: "Student Activity",
+    description:
+      "Students participating and enjoying a learning activity.",
+  },
+
+  {
+    src: "/images/gallery/flute_cmpetition.mp4",
+    title: "Flute Competition",
+    description:
+      "A glimpse of student participation and activities.",
+  },
+];
+
+/* =========================================================
+   CATEGORY FILTERS
    ========================================================= */
 
 const categories = [
   "All",
   "Our Centre",
-  "Events",
+  "Classroom",
   "Achievements",
   "Results",
   "Admissions",
-  "Institute",
+  "Events",
   "Brand",
 ];
 
@@ -185,8 +567,6 @@ export default function GalleryPage() {
           background: `linear-gradient(135deg, ${C.navy}, ${C.navyDeep})`,
         }}
       >
-        {/* Decorative circles */}
-
         <div
           className="absolute -top-24 -right-24 w-80 h-80 rounded-full opacity-20"
           style={{
@@ -196,7 +576,7 @@ export default function GalleryPage() {
         />
 
         <div
-          className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full opacity-10"
+          className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full opacity-15"
           style={{
             backgroundColor: C.red,
             filter: "blur(70px)",
@@ -220,9 +600,8 @@ export default function GalleryPage() {
           </h1>
 
           <p className="text-white/80 max-w-2xl mx-auto text-base md:text-lg font-medium leading-relaxed">
-            Our centre, celebrations, student achievements,
-            results and everything that makes Revi&apos;s Group
-            Tuitions special.
+            Our centre, classrooms, celebrations, achievements,
+            results and the moments that make Revi&apos;s special.
           </p>
         </div>
       </section>
@@ -232,7 +611,7 @@ export default function GalleryPage() {
       ===================================================== */}
 
       <section
-        className="py-8 sticky top-0 z-30 border-b shadow-sm"
+        className="py-6 sticky top-0 z-30 border-b shadow-sm"
         style={{
           backgroundColor: "rgba(255,255,255,0.96)",
           backdropFilter: "blur(10px)",
@@ -247,7 +626,9 @@ export default function GalleryPage() {
                 <button
                   key={category}
                   type="button"
-                  onClick={() => setActiveCategory(category)}
+                  onClick={() =>
+                    setActiveCategory(category)
+                  }
                   className="whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-extrabold transition-all duration-200"
                   style={{
                     backgroundColor: active
@@ -279,9 +660,7 @@ export default function GalleryPage() {
       >
         <div className="max-w-6xl mx-auto px-5">
 
-          {/* Section heading */}
-
-          <div className="mb-10">
+          <div className="text-center mb-12">
             <div
               className="text-sm font-extrabold uppercase tracking-widest mb-2"
               style={{ color: C.red }}
@@ -299,14 +678,13 @@ export default function GalleryPage() {
               From our classroom to our results.
             </h2>
 
-            <p className="text-gray-600 mt-3 max-w-2xl">
-              Take a look at our centre, celebrations,
-              student achievements and the journey of Revi&apos;s
-              Group Tuitions.
+            <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+              Explore moments from Revi&apos;s Group Tuitions —
+              our centre, students, teaching sessions and achievements.
             </p>
           </div>
 
-          {/* Photos */}
+          {/* PHOTO CARDS */}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredPhotos.map((photo, index) => (
@@ -323,8 +701,6 @@ export default function GalleryPage() {
                   borderColor: C.gold,
                 }}
               >
-                {/* Image */}
-
                 <div
                   className={`relative overflow-hidden ${
                     index === 0
@@ -344,18 +720,22 @@ export default function GalleryPage() {
                     }
                   />
 
-                  {/* Hover overlay */}
+                  {/* Dark hover overlay */}
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                  <div className="absolute right-4 top-4 w-11 h-11 rounded-full bg-white/90 flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Zoom */}
+
+                  <div
+                    className="absolute right-4 top-4 w-11 h-11 rounded-full bg-white/90 flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
                     <ZoomIn
                       size={20}
                       color={C.navy}
                     />
                   </div>
 
-                  {/* Category badge */}
+                  {/* Category */}
 
                   <div
                     className="absolute left-4 top-4 px-3 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide shadow-md"
@@ -389,7 +769,7 @@ export default function GalleryPage() {
                     className="text-xs font-extrabold mt-3"
                     style={{ color: C.red }}
                   >
-                    Click to view →
+                    View photo →
                   </div>
                 </div>
               </button>
@@ -409,7 +789,103 @@ export default function GalleryPage() {
       </section>
 
       {/* =====================================================
-          FULL SCREEN PHOTO MODAL
+          VIDEOS — COMPLETELY SEPARATE
+      ===================================================== */}
+
+      <section
+        className="py-16 relative overflow-hidden"
+        style={{
+          background: `linear-gradient(135deg, ${C.navy}, ${C.navyDeep})`,
+        }}
+      >
+        <div
+          className="absolute top-0 right-0 w-80 h-80 rounded-full opacity-10"
+          style={{
+            backgroundColor: C.gold,
+            filter: "blur(80px)",
+          }}
+        />
+
+        <div className="max-w-6xl mx-auto px-5 relative">
+
+          {/* VIDEO HEADER */}
+
+          <div className="text-center mb-12">
+            <Ribbon color={C.purple}>
+              Watch Revi&apos;s
+            </Ribbon>
+
+            <h2
+              style={{
+                ...disp,
+                color: "#fff",
+              }}
+              className="text-3xl md:text-4xl font-extrabold mt-5"
+            >
+              Moments That Tell Our Story.
+            </h2>
+
+            <p className="text-white/70 max-w-2xl mx-auto mt-3">
+              Watch real moments from our students, activities
+              and the journey of Revi&apos;s Group Tuitions.
+            </p>
+          </div>
+
+          {/* VIDEO CARDS */}
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {galleryVideos.map((video) => (
+              <div
+                key={video.src}
+                className="rounded-3xl overflow-hidden shadow-2xl border-4 bg-white hover:-translate-y-2 transition-all duration-300"
+                style={{
+                  borderColor: C.gold,
+                }}
+              >
+                {/* VIDEO PLAYER */}
+
+                <div className="relative bg-black aspect-video">
+                  <video
+                    src={video.src}
+                    controls
+                    preload="metadata"
+                    playsInline
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+
+                {/* VIDEO INFORMATION */}
+
+                <div className="p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <PlayCircle
+                      size={20}
+                      color={C.red}
+                    />
+
+                    <h3
+                      style={{
+                        ...disp,
+                        color: C.navy,
+                      }}
+                      className="font-extrabold text-lg"
+                    >
+                      {video.title}
+                    </h3>
+                  </div>
+
+                  <p className="text-sm text-gray-500 leading-relaxed">
+                    {video.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          PHOTO FULL SCREEN MODAL
       ===================================================== */}
 
       {selectedPhoto && (
@@ -417,7 +893,7 @@ export default function GalleryPage() {
           className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4"
           onClick={() => setSelectedPhoto(null)}
         >
-          {/* Close button */}
+          {/* CLOSE */}
 
           <button
             type="button"
@@ -428,7 +904,7 @@ export default function GalleryPage() {
             <X size={28} />
           </button>
 
-          {/* Photo */}
+          {/* PHOTO */}
 
           <div
             className="relative w-full max-w-6xl h-[80vh]"
@@ -446,7 +922,7 @@ export default function GalleryPage() {
             />
           </div>
 
-          {/* Photo information */}
+          {/* PHOTO INFORMATION */}
 
           <div className="absolute bottom-5 left-5 right-5 text-center">
             <div className="inline-block bg-black/60 backdrop-blur-md rounded-2xl px-6 py-3">
@@ -463,7 +939,7 @@ export default function GalleryPage() {
       )}
 
       {/* =====================================================
-          CALL TO ACTION
+          FINAL CALL TO ACTION
       ===================================================== */}
 
       <section
