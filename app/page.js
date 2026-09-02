@@ -555,14 +555,13 @@ export default function HomePage() {
 </button>
     </div>
   </div>
-  </section>
-
+   
 
 {/* ========================================================= */}
 {/* PARENT + CHILD → REVI'S ANIMATED JOURNEY */}
 {/* ========================================================= */}
 
-<div className="absolute z-30 left-[40%] bottom-[-14%] hidden lg:block pointer-events-none">
+<div className="absolute z-30 left-[41%] top-[81%] hidden lg:block pointer-events-none">
 
   {/* Small parent + child visual */}
   <div
@@ -735,7 +734,7 @@ export default function HomePage() {
 
 
 {/* Animation styles */}
-<style jsx>{`
+<style>{`
 
   @keyframes familyFloat {
     0%, 100% {
@@ -772,6 +771,8 @@ export default function HomePage() {
   }
 
 `}</style>     
+
+</section>
 
  {/* =====================================================
           TRUST STRIP
@@ -867,52 +868,157 @@ export default function HomePage() {
           </h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {features.map(
-              ({ icon: Icon, title, desc }, index) => (
-                <div
-                  key={title}
-                  className="group bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-md border-t-4 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
-                  style={{ borderColor: C.red }}
-                >
-                  <div
-                    className="absolute -right-8 -top-8 w-24 h-24 rounded-full opacity-20 group-hover:scale-150 transition-transform duration-500"
-                    style={{ backgroundColor: C.gold }}
-                  />
+  {features.map(
+    ({ icon: Icon, title, desc }, index) => (
+      <div
+        key={title}
+        className="group relative bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-md border-t-4 overflow-hidden
+        hover:shadow-2xl hover:-translate-y-3 transition-all duration-500
+        revi-feature-card"
+        style={{
+          borderColor: C.red,
+          animationDelay: `${index * 150}ms`,
+        }}
+      >
 
-                  <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center mb-4 relative"
-                    style={{
-                      backgroundColor: C.sky,
-                    }}
-                  >
-                    <Icon size={22} color={C.red} />
-                  </div>
+        {/* Animated glow in corner */}
+        <div
+          className="absolute -right-10 -top-10 w-28 h-28 rounded-full opacity-20
+          group-hover:scale-[2] group-hover:opacity-30
+          transition-all duration-700"
+          style={{
+            backgroundColor: C.gold,
+          }}
+        />
 
-                  <div
-                    className="font-extrabold text-base mb-2 relative"
-                    style={{
-                      ...disp,
-                      color: C.navy,
-                    }}
-                  >
-                    {title}
-                  </div>
+        {/* Moving shine across card */}
+        <div
+          className="absolute top-0 left-[-120%] w-[80%] h-full
+          skew-x-[-20deg] group-hover:left-[140%]
+          transition-all duration-[1200ms] pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent)",
+          }}
+        />
 
-                  <div className="text-sm text-gray-600 leading-relaxed relative">
-                    {desc}
-                  </div>
+        {/* Icon */}
+        <div
+          className="w-14 h-14 rounded-full flex items-center justify-center mb-4 relative
+          revi-feature-icon"
+          style={{
+            backgroundColor: C.sky,
+          }}
+        >
+          <Icon
+            size={24}
+            color={C.red}
+            strokeWidth={2.3}
+          />
 
-                  <div
-                    className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-500"
-                    style={{ backgroundColor: C.gold }}
-                  />
-                </div>
-              )
-            )}
-          </div>
+          {/* Icon glow */}
+          <div
+            className="absolute inset-0 rounded-full opacity-0
+            group-hover:opacity-60 group-hover:scale-125
+            transition-all duration-500"
+            style={{
+              boxShadow: `0 0 25px ${C.gold}`,
+            }}
+          />
         </div>
-      </section>
 
+        {/* Title */}
+        <div
+          className="font-extrabold text-base mb-2 relative"
+          style={{
+            ...disp,
+            color: C.navy,
+          }}
+        >
+          {title}
+        </div>
+
+        {/* Description */}
+        <div className="text-sm text-gray-600 leading-relaxed relative">
+          {desc}
+        </div>
+
+        {/* Animated bottom line */}
+        <div
+          className="absolute bottom-0 left-0 h-1 w-0
+          group-hover:w-full transition-all duration-700"
+          style={{
+            background:
+              `linear-gradient(90deg, ${C.red}, ${C.gold})`,
+          }}
+        />
+
+        {/* Small floating sparkle */}
+        <div
+          className="absolute right-4 bottom-4 text-lg opacity-0
+          group-hover:opacity-100 transition-all duration-500
+          revi-card-sparkle"
+        >
+          ✦
+        </div>
+
+      </div>
+    )
+  )}
+</div>
+
+{/* Feature section animation */}
+<style>{`
+
+  .revi-feature-card {
+    animation: reviCardEntrance 0.8s ease-out both;
+  }
+
+  .revi-feature-icon {
+    animation: reviIconFloat 3s ease-in-out infinite;
+  }
+
+  .revi-card-sparkle {
+    animation: reviSparkle 1.5s ease-in-out infinite;
+  }
+
+  @keyframes reviCardEntrance {
+    0% {
+      opacity: 0;
+      transform: translateY(35px) scale(0.96);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes reviIconFloat {
+    0%, 100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes reviSparkle {
+    0%, 100% {
+      transform: scale(0.8) rotate(0deg);
+      opacity: 0.4;
+    }
+
+    50% {
+      transform: scale(1.25) rotate(15deg);
+      opacity: 1;
+    }
+  }
+
+`}</style>
+</div>
+</section>
       {/* =====================================================
           HUMAN CONNECTION / STORY SECTION
       ===================================================== */}

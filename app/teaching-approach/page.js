@@ -20,7 +20,7 @@ export default function ApproachPage() {
       <section className="relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${C.navy}, ${C.navyDeep})` }}>
         <div className="max-w-6xl mx-auto px-5 py-14 text-center">
           <Ribbon>How We Teach</Ribbon>
-          <h1 style={{ ...disp, color: "#fff" }} className="text-4xl md:text-5xl font-extrabold mt-5 mb-4">Better Guidance. Better Concepts. Better Future.</h1>
+          <h1 style={{ ...disp, color: "#fff" }} className="text-4xl md:text-4x2 font-extrabold mt-5 mb-4">Better Guidance. Better Concepts. Better Future.</h1>
           <p className="text-white/85 max-w-2xl mx-auto font-medium">Not just what we teach — how we make sure it actually sticks.</p>
         </div>
       </section>

@@ -21,6 +21,12 @@ const galleryPhotos = [
      OUR CENTRE
      ======================================================= */
 
+{
+  src: "/images/gallery/1st in Vani school.jpg",
+  title: "1st in Vani School",
+  category: "Achievements",
+},
+
   {
     src: "/images/gallery/banner 4.jpg",
     title: "Our Classroom",
@@ -505,7 +511,7 @@ const galleryPhotos = [
 const galleryVideos = [
   {
     src: "/images/gallery/17 years of success.mp4",
-    title: "17 Years of Success",
+    title: "18 Years of Success",
     description:
       "A special glimpse into the journey of Revi's Group Tuitions.",
   },
