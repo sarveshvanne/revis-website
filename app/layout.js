@@ -99,12 +99,15 @@ const structuredData = {
   description:
     "Revi's Group Tuitions in Khadakpada, Kalyan West provides tuition classes for Std V to X students following State Board and CBSE curricula.",
   telephone: ["+91-9321016779", "+91-9833661297"],
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Kalyan West",
-    addressRegion: "Maharashtra",
-    addressCountry: "IN",
-  },
+ address: {
+  "@type": "PostalAddress",
+  streetAddress:
+    "Shop No. 6/8, Sai Sankul Phase 1, Near Sai Sagar Hotel, Sai Chowk",
+  addressLocality: "Kalyan West",
+  addressRegion: "Maharashtra",
+  postalCode: "421301",
+  addressCountry: "IN",
+},
   areaServed: {
     "@type": "City",
     name: "Kalyan",
