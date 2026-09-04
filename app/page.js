@@ -10,6 +10,7 @@ import {
   ClipboardCheck,
   Award,
   Star,
+ ArrowRight,
   ChevronRight,
   CheckCircle2,
   Youtube,
@@ -784,7 +785,7 @@ export default function HomePage() {
           background: `linear-gradient(90deg, ${C.gold}, ${C.goldDeep})`,
         }}
       >
-        <div className="max-w-6xl mx-auto px-5 py-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div className="max-w-7xl mx-auto px-7 py-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           {[
             ["20+ Yrs", "Teaching Experience"],
             ["2008", "Institute Established"],
@@ -797,7 +798,7 @@ export default function HomePage() {
                   ...disp,
                   color: C.navyDeep,
                 }}
-                className="text-xl font-extrabold"
+                className="text-3xl font-extrabold"
               >
                 {big}
               </div>
@@ -816,6 +817,8 @@ export default function HomePage() {
       {/* =====================================================
           WHY CHOOSE REVI'S
       ===================================================== */}
+
+
 
       <section
         className="py-16 relative overflow-hidden"
@@ -1236,60 +1239,91 @@ export default function HomePage() {
           CLASSES
       ===================================================== */}
 
-      <section className="py-16 bg-white relative overflow-hidden">
+      <section
+        className="relative overflow-hidden py-16 md:py-20"
+        style={{
+          backgroundColor: "#fff",
+        }}
+      >
         <div
-          className="absolute right-[-100px] top-10 w-72 h-72 rounded-full opacity-10"
+          className="absolute -right-24 top-10 w-72 h-72 rounded-full blur-[90px] opacity-10"
           style={{
             backgroundColor: C.gold,
-            filter: "blur(70px)",
           }}
         />
 
-        <div className="max-w-6xl mx-auto px-5 relative">
+        <div className="max-w-7xl mx-auto px-5 relative">
+
           <Eyebrow>Our Classes</Eyebrow>
 
-          <h2
-            style={{
-              ...disp,
-              color: C.navy,
-            }}
-            className="text-3xl md:text-4xl font-extrabold mb-10 max-w-xl"
-          >
-            Std V through Std X, State Board & CBSE.
-          </h2>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
+            <div>
+              <h2
+                style={{
+                  ...disp,
+                  color: C.navy,
+                }}
+                className="text-3xl md:text-5xl font-extrabold mt-2"
+              >
+                Std V through Std X.
+              </h2>
 
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+              <p className="text-gray-600 mt-3">
+                State Board &amp; CBSE · All subjects
+              </p>
+            </div>
+
+            <Link
+              href="/classes"
+              className="inline-flex items-center gap-2 font-extrabold text-sm hover:gap-3 transition-all"
+              style={{
+                color: C.red,
+              }}
+            >
+              Explore Classes
+              <ArrowRight size={17} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {classes.map((className, index) => (
               <Link
                 key={className}
                 href="/classes"
-                className="group aspect-square flex flex-col items-center justify-center rounded-2xl shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+                className="group relative overflow-hidden rounded-3xl p-6 min-h-[150px] flex flex-col justify-between shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
                 style={{
                   background:
-                    index % 2 === 0
+                    index % 3 === 0
                       ? `linear-gradient(145deg, ${C.navy}, ${C.navyDeep})`
-                      : `linear-gradient(145deg, ${C.red}, ${C.redDeep})`,
+                      : index % 3 === 1
+                      ? `linear-gradient(145deg, ${C.red}, ${C.redDeep})`
+                      : `linear-gradient(145deg, #63318B, ${C.purple})`,
                 }}
               >
                 <div
-                  className="absolute w-20 h-20 rounded-full opacity-10 group-hover:scale-150 transition-transform duration-500"
+                  className="absolute -right-8 -top-8 w-28 h-28 rounded-full opacity-20 group-hover:scale-150 transition-transform duration-500"
                   style={{
                     backgroundColor: C.gold,
                   }}
                 />
 
-                <div
-                  style={disp}
-                  className="text-white text-3xl font-extrabold relative"
-                >
-                  {className}
+                <div className="relative flex justify-between items-start">
+                  <span className="text-white/60 text-xs font-bold uppercase tracking-widest">
+                    Standard
+                  </span>
+
+                  <Sparkles
+                    size={15}
+                    color={C.gold}
+                    className="revi-sparkle"
+                  />
                 </div>
 
                 <div
-                  className="text-[10px] uppercase tracking-wide mt-1 font-bold relative"
-                  style={{ color: C.gold }}
+                  style={disp}
+                  className="relative text-white text-4xl font-extrabold"
                 >
-                  Standard
+                  {className}
                 </div>
               </Link>
             ))}
@@ -1297,136 +1331,183 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* =====================================================
+
+
+     {/* =====================================================
           TOPPERS
       ===================================================== */}
 
       <section
-        className="py-16 relative overflow-hidden"
+        className="relative overflow-hidden py-16 md:py-20"
         style={{
-          background: `linear-gradient(135deg, ${C.navy}, ${C.navyDeep})`,
+          background: `
+            radial-gradient(
+              circle at 90% 15%,
+              rgba(255,193,7,.14),
+              transparent 28%
+            ),
+            linear-gradient(
+              135deg,
+              ${C.navy},
+              ${C.navyDeep}
+            )
+          `,
         }}
       >
         <div
-          className="absolute -right-32 top-20 w-96 h-96 rounded-full opacity-10"
+          className="absolute -left-40 bottom-0 w-96 h-96 rounded-full blur-[100px] opacity-15"
           style={{
-            backgroundColor: C.gold,
-            filter: "blur(100px)",
+            backgroundColor: "#3B82F6",
           }}
         />
 
-        <div className="max-w-6xl mx-auto px-5 relative">
+        <div className="max-w-7xl mx-auto px-5 relative">
+
           <Ribbon color={C.purple}>
             Consistently 100% Result
           </Ribbon>
 
-          <div className="flex items-end justify-between flex-wrap gap-4 mt-5 mb-10">
-            <h2
-              style={{
-                ...disp,
-                color: "#fff",
-              }}
-              className="text-3xl md:text-4xl font-extrabold max-w-xl"
-            >
-              Our SSC Toppers — real names, real percentages.
-            </h2>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mt-6 mb-10">
+            <div>
+              <h2
+                style={{
+                  ...disp,
+                  color: "#fff",
+                }}
+                className="text-3xl md:text-5xl font-extrabold"
+              >
+                Our SSC Toppers.
+              </h2>
+
+              <p className="text-white/60 mt-2">
+                Real students. Real percentages. Real hard work.
+              </p>
+            </div>
 
             <Link
               href="/results"
-              className="text-sm font-extrabold inline-flex items-center gap-1 hover:gap-2 transition-all"
-              style={{ color: C.gold }}
+              className="inline-flex items-center gap-2 text-sm font-extrabold hover:gap-3 transition-all"
+              style={{
+                color: C.gold,
+              }}
             >
-              See full Results archive
-              <ChevronRight size={16} />
+              See Full Results
+              <ChevronRight size={17} />
             </Link>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {toppers.map((student) => (
+            {toppers.map((student, index) => (
               <div
                 key={student.name}
-                className="rounded-2xl shadow-xl relative overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
+                className="group relative overflow-hidden rounded-3xl border shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
                 style={{
-                  backgroundColor:
-                    "rgba(255,255,255,0.08)",
-                  border:
-                    "1px solid rgba(255,255,255,0.08)",
+                  backgroundColor: "rgba(255,255,255,.07)",
+                  borderColor: "rgba(255,255,255,.10)",
                 }}
               >
-                <div className="relative w-full h-64 overflow-hidden bg-white">
+                <div className="relative h-64 overflow-hidden bg-white">
                   <Image
                     src={student.image}
                     alt={student.name}
                     fill
-                    className="object-cover object-top hover:scale-105 transition-transform duration-500"
+                    className="object-cover object-top toppers-photo"
                     sizes="(max-width: 768px) 100vw, 25vw"
                   />
+
+                  <div className="absolute top-3 left-3 flex items-center gap-1.5 rounded-full px-3 py-1.5 bg-white/95 shadow-md">
+                    <Trophy
+                      size={14}
+                      color={C.goldDeep}
+                    />
+
+                    <span
+                      className="text-[10px] font-black uppercase tracking-wide"
+                      style={{
+                        color: C.navy,
+                      }}
+                    >
+                      Star Performer
+                    </span>
+                  </div>
                 </div>
 
-                <div className="p-5 text-center">
-                  <div className="flex justify-center mb-2">
-                    <Trophy size={21} color={C.gold} />
-                  </div>
-
+                <div className="p-5">
                   <div
-                    className="text-white font-extrabold text-base mb-2"
-                    style={disp}
+                    style={{
+                      ...disp,
+                      color: "#fff",
+                    }}
+                    className="font-extrabold text-base"
                   >
                     {student.name}
                   </div>
 
                   <div
-                    className="text-3xl font-extrabold leading-none mb-2"
                     style={{
                       ...disp,
                       color: C.gold,
                     }}
+                    className="text-4xl font-extrabold mt-2"
                   >
                     {student.pct}
                   </div>
 
-                  <div className="text-white/50 text-xs uppercase tracking-wide font-bold">
-                    {student.year}
+                  <div className="flex items-center justify-between mt-2">
+                    <span className="text-white/45 text-xs uppercase tracking-wider font-bold">
+                      SSC Result
+                    </span>
+
+                    <span className="text-white/55 text-xs font-semibold">
+                      {student.year}
+                    </span>
+                  </div>
+
+                  <div className="mt-4 h-1.5 rounded-full bg-white/10 overflow-hidden">
+                    <div
+                      className="h-full rounded-full"
+                      style={{
+                        width: student.pct,
+                        background: `linear-gradient(
+                          90deg,
+                          ${C.gold},
+                          #FFE082
+                        )`,
+                      }}
+                    />
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="text-white/70 text-sm mt-6 font-medium">
-            Remaining all students scored above 80% — full
-            batch results on the Results page.
+          <div className="text-white/55 text-sm mt-7">
+            Remaining students scored above 80% — see the complete
+            batch-wise results on our Results page.
           </div>
         </div>
       </section>
 
+
       {/* =====================================================
-          VIDEOS — SEPARATE SECTION
+          VIDEOS
       ===================================================== */}
 
       <section
-        className="py-20 relative overflow-hidden"
+        className="relative overflow-hidden py-20"
         style={{
-          backgroundColor: C.sky,
+          background: `
+            radial-gradient(
+              circle at 10% 20%,
+              rgba(255,193,7,.10),
+              transparent 25%
+            ),
+            ${C.sky}
+          `,
         }}
       >
-        {/* Decorative balloons */}
+        <div className="max-w-7xl mx-auto px-5 relative">
 
-        <div
-          className="absolute left-[5%] top-20 w-16 h-20 rounded-full opacity-20 revi-float"
-          style={{
-            backgroundColor: C.red,
-          }}
-        />
-
-        <div
-          className="absolute right-[7%] top-32 w-14 h-18 rounded-full opacity-20 revi-float-reverse"
-          style={{
-            backgroundColor: C.gold,
-          }}
-        />
-
-        <div className="max-w-6xl mx-auto px-5 relative">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <Eyebrow>Watch Revi&apos;s In Action</Eyebrow>
 
@@ -1437,14 +1518,18 @@ export default function HomePage() {
               }}
               className="text-3xl md:text-5xl font-extrabold mt-3"
             >
-              Learning doesn&apos;t have to be{" "}
-              <span style={{ color: C.red }}>
-                ordinary.
+              Real moments.
+              <span
+                style={{
+                  color: C.red,
+                }}
+              >
+                {" "}Real memories.
               </span>
             </h2>
 
             <p className="text-gray-600 mt-4">
-              Explore moments, activities and memories from
+              Explore activities, celebrations and moments from
               Revi&apos;s Group Tuitions.
             </p>
           </div>
@@ -1453,8 +1538,10 @@ export default function HomePage() {
             {videos.map((video) => (
               <div
                 key={video.src}
-                className="bg-white rounded-3xl overflow-hidden shadow-xl border-4 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
-                style={{ borderColor: C.gold }}
+                className="group bg-white rounded-3xl overflow-hidden shadow-xl border-4 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
+                style={{
+                  borderColor: C.gold,
+                }}
               >
                 <div className="relative bg-black">
                   <video
@@ -1469,7 +1556,9 @@ export default function HomePage() {
                 <div className="p-5">
                   <div
                     className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wide"
-                    style={{ color: C.red }}
+                    style={{
+                      color: C.red,
+                    }}
                   >
                     <PlayCircle size={15} />
                     Revi&apos;s Moments
@@ -1494,6 +1583,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
 
       {/* =====================================================
           VISIT US
@@ -1695,7 +1785,7 @@ export default function HomePage() {
               href="https://www.justdial.com/Kalyan/Revis-Group-Tuitions-Near-Sai-Chawknear-Sagar-Hotel-Kalyan-West/022PXX22-XX22-180612204250-N6U4_BZDET"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-4 px-8 py-5.5 rounded-full font-extrabold bg-white shadow-md hover:scale-200 transition-transform border-2"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-extrabold bg-white shadow-md hover:scale-150 transition-transform border-2"
               style={{
                 borderColor: C.gold,
               }}

@@ -137,7 +137,7 @@ export default function NavBar() {
                   <Link
                     key={l.href}
                     href={l.href}
-                    className="text-xl font-bold px-3 py-2 rounded-full transition-all duration-200 hover:scale-105"
+                    className="text-lg font-bold px-3 py-2 rounded-full transition-all duration-200 hover:scale-105"
                     style={{
                       color:
                         pathname === l.href
