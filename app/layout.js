@@ -91,6 +91,27 @@ export const metadata = {
   category: "Education",
 };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: "Revi's Group Tuitions",
+  url: "https://www.revisgrouptuitions.com",
+  description:
+    "Revi's Group Tuitions in Khadakpada, Kalyan West provides tuition classes for Std V to X students following State Board and CBSE curricula.",
+  telephone: ["+91-9321016779", "+91-9833661297"],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Kalyan West",
+    addressRegion: "Maharashtra",
+    addressCountry: "IN",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Kalyan",
+  },
+  sameAs: ["https://www.revisgrouptuitions.com"],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
@@ -98,6 +119,12 @@ export default function RootLayout({ children }) {
         style={{ fontFamily: "var(--font-inter)" }}
         className="bg-white text-[#1C2430]"
       >
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(structuredData),
+  }}
+/>
         <NavBar />
         {children}
         <Footer />
