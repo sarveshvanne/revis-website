@@ -13,11 +13,20 @@ import { C, disp } from "@/lib/theme";
 import { Ribbon, GradButton } from "@/components/UI";
 
 export const metadata = {
-  title: "Classes V to X | Revi's Group Tuitions",
+  title: "Std V to X Tuition Classes | Kalyan West",
   description:
-    "Std V to X tuition classes at Revi's Group Tuitions, Kalyan (West) — State Board & CBSE, Maths, Science, English, SST, Hindi.",
+    "Std V to X tuition classes at Revi's Group Tuitions in Khadakpada, Kalyan West. State Board and CBSE coaching with personal attention in Maths, Science, English, SST and Hindi.",
+  alternates: {
+    canonical: "/classes",
+  },
+  openGraph: {
+    title: "Std V to X Tuition Classes | Kalyan West",
+    description:
+      "State Board and CBSE tuition classes for Std V to X students in Khadakpada, Kalyan West, with personal attention and focused preparation.",
+    url: "/classes",
+    type: "website",
+  },
 };
-
 const rows = [
   [
     "Std V",

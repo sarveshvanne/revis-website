@@ -17,9 +17,19 @@ import { C, disp, body } from "@/lib/theme";
 import { Ribbon, Eyebrow, GradButton } from "@/components/UI";
 
 export const metadata = {
-  title: "Teaching Approach | Revi's Group Tuitions",
+  title: "Teaching Approach | Revi's Group Tuitions Kalyan",
   description:
-    "Concept-based learning, small batches, regular tests and progress reports — how Revi's Group Tuitions teaches Std V to X in Kalyan (West).",
+    "Discover Revi's Group Tuitions teaching approach in Khadakpada, Kalyan West — concept-based learning, small batches, doubt clearing, regular tests, progress reports and revision for Std V to X.",
+  alternates: {
+    canonical: "/teaching-approach",
+  },
+  openGraph: {
+    title: "Teaching Approach | Revi's Group Tuitions Kalyan",
+    description:
+      "Concept-based learning, small batches, regular tests and personal attention for Std V to X students in Kalyan West.",
+    url: "/teaching-approach",
+    type: "website",
+  },
 };
 
 const teachingMethods = [

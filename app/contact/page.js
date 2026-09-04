@@ -16,11 +16,20 @@ import { C, disp } from "@/lib/theme";
 import { Ribbon, GradButton } from "@/components/UI";
 
 export const metadata = {
-  title: "Contact Us | Revi's Group Tuitions",
+  title: "Contact Revi's Group Tuitions | Kalyan West",
   description:
-    "Contact Revi's Group Tuitions — Shop No. 6/8, Sai Sankul Phase 1, Khadakpada, Kalyan (West). Call 93210 16779 / 98336 61297.",
+    "Contact Revi's Group Tuitions in Khadakpada, Kalyan West for Std V to X tuition admissions and enquiries. Call 93210 16779 or 98336 61297.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Revi's Group Tuitions | Kalyan West",
+    description:
+      "Get in touch with Revi's Group Tuitions in Khadakpada, Kalyan West for admissions, batches and tuition enquiries for Std V to X.",
+    url: "/contact",
+    type: "website",
+  },
 };
-
 const contactItems = [
   {
     icon: MapPin,

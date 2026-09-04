@@ -15,9 +15,19 @@ import { Ribbon, Eyebrow, GradButton } from "@/components/UI";
 import EnquiryForm from "@/components/EnquiryForm";
 
 export const metadata = {
-  title: "Admissions Open | Revi's Group Tuitions",
+  title: "Admissions Open | Std V-X Tuition Kalyan West",
   description:
-    "Admissions open for Std V to X at Revi's Group Tuitions, Kalyan (West). State Board & CBSE. Limited seats. Call 93210 16779.",
+    "Admissions open at Revi's Group Tuitions, Khadakpada, Kalyan West for Std V to X. State Board and CBSE, all subjects, small batches and personal attention. Limited seats.",
+  alternates: {
+    canonical: "/admissions",
+  },
+  openGraph: {
+    title: "Admissions Open | Revi's Group Tuitions Kalyan",
+    description:
+      "Admissions open for Std V to X in Kalyan West. State Board and CBSE tuition with small batches, regular testing and personal attention.",
+    url: "/admissions",
+    type: "website",
+  },
 };
 
 const benefits = [

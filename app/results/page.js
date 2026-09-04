@@ -3,9 +3,19 @@ import { C, disp } from "@/lib/theme";
 import { Ribbon, Starburst, GradButton } from "@/components/UI";
 
 export const metadata = {
-  title: "SSC Board Results | Revi's Group Tuitions",
+  title: "SSC Board Results | Revi's Group Tuitions Kalyan",
   description:
-    "Real SSC board results from Revi's Group Tuitions, Kalyan (West) — consistently 100% result, year after year.",
+    "View SSC board results and student achievements from Revi's Group Tuitions in Khadakpada, Kalyan West. See our recent results, toppers and consistently strong academic performance.",
+  alternates: {
+    canonical: "/results",
+  },
+  openGraph: {
+    title: "SSC Board Results | Revi's Group Tuitions Kalyan",
+    description:
+      "See SSC results, toppers and student achievements from Revi's Group Tuitions, Khadakpada, Kalyan West.",
+    url: "/results",
+    type: "website",
+  },
 };
 
 const groups = [
