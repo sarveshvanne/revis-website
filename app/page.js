@@ -50,7 +50,7 @@ const toppers = [
   {
     name: "Shreya Unnithan",
     pct: "96.00%",
-    year: "2024-25",
+    year: "2017-18",
     image: "/images/students/Shreya_unnithan.jpg",
   },
   {
@@ -90,6 +90,7 @@ const toppers = [
     image: "/images/students/himanshu_sangle.jpg",
   },
 ];
+
 
 /* =========================================================
    FEATURES
@@ -1677,13 +1678,13 @@ export default function HomePage() {
               href="https://www.google.com/search?q=revisgrouptuition"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-extrabold bg-white shadow-md hover:scale-105 transition-transform border-2"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-extrabold bg-white shadow-md hover:scale-150 transition-transform border-2"
               style={{
                 borderColor: C.gold,
               }}
             >
               <Star
-                size={18}
+                size={100}
                 fill={C.gold}
                 color={C.gold}
               />
@@ -1694,13 +1695,13 @@ export default function HomePage() {
               href="https://www.justdial.com/Kalyan/Revis-Group-Tuitions-Near-Sai-Chawknear-Sagar-Hotel-Kalyan-West/022PXX22-XX22-180612204250-N6U4_BZDET"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-extrabold bg-white shadow-md hover:scale-105 transition-transform border-2"
+              className="inline-flex items-center gap-4 px-8 py-5.5 rounded-full font-extrabold bg-white shadow-md hover:scale-200 transition-transform border-2"
               style={{
                 borderColor: C.gold,
               }}
             >
               <Star
-                size={18}
+                size={100}
                 fill={C.gold}
                 color={C.gold}
               />
@@ -1708,25 +1709,25 @@ export default function HomePage() {
             </a>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-10">
             <a
               href="https://www.youtube.com/@revisgrouptuitions"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform"
+              className="w-20 h-20 rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform"
               style={{
                 backgroundColor: C.red,
               }}
               aria-label="YouTube"
             >
-              <Youtube size={20} color="#fff" />
+              <Youtube size={40} color="#fff" />
             </a>
 
             <a
               href="https://instagram.com/revisgroup"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform"
+              className="w-20 h-20 rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform"
               style={{
                 background:
                   "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)",
@@ -1734,7 +1735,7 @@ export default function HomePage() {
               aria-label="Instagram"
             >
               <Instagram
-                size={20}
+                size={40}
                 color="#fff"
               />
             </a>
@@ -1743,13 +1744,13 @@ export default function HomePage() {
               href="https://facebook.com/revisgroup"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform"
+              className="w-20 h-20 rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform"
               style={{
                 backgroundColor: "#1877F2",
               }}
               aria-label="Facebook"
             >
-              <Facebook size={20} color="#fff" />
+              <Facebook size={40} color="#fff" />
             </a>
           </div>
         </div>
@@ -1781,25 +1782,25 @@ export default function HomePage() {
           }}
         />
 
-        <div className="max-w-6xl mx-auto px-5 flex flex-col lg:flex-row items-center justify-between gap-8 relative">
+        <div className="max-w-7xl mx-auto px-5 flex flex-col lg:flex-row items-center justify-between gap-8 relative">
           <div>
             <div
               style={{
                 ...disp,
                 color: "#fff",
               }}
-              className="text-3xl md:text-4xl font-extrabold mb-2"
+              className="text-8xl md:text-5xl font-extrabold mb-2"
             >
               Admissions Open — Std V to X
             </div>
 
             <div className="text-white/90 text-sm flex items-center gap-2 font-medium">
-              <MapPin size={16} />
+              <MapPin size={20} />
               Khadakpada, Kalyan (W) - 421301
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-5">
             <GradButton
               href="tel:9321016779"
               icon={Phone}

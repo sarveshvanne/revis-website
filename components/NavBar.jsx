@@ -14,17 +14,16 @@ function TopTicker() {
       style={{ backgroundColor: C.gold }}
     >
       <div
-        className="whitespace-nowrap font-extrabold text-xs"
+        className="whitespace-nowrap font-extrabold text-lg"
         style={{
           color: C.navyDeep,
-          animation: "marquee 18s linear infinite",
+          animation: "marquee 12s linear infinite",
         }}
       >
-        &#11088; Admissions Open for Std 5th to 10th (State Board &amp; CBSE)
-        — Limited Seats Available &bull; Consistently 100% Result Since 2008
-        &bull; Call 93210 16779 / 98336 61297 &bull; Admissions Open for Std
-        5th to 10th (State Board &amp; CBSE) — Limited Seats Available &bull;
-        Consistently 100% Result Since 2008 &bull;
+        &#11088; Admissions Open for Std 5th to 10th (State Board &amp; CBSE Board)
+        — Limited Seats Available &bull; Consistently 100% Result ; Since 2008 
+        &bull; 15 to 20 Students per batch   &bull;  All Subjects under one roof &bull;
+          A/c Classrooms  &bull; Regular Oral & Written Tests &bull;  Call 93210 16779 / 98336 61297 &bull;
       </div>
     </div>
   );
@@ -138,7 +137,7 @@ export default function NavBar() {
                   <Link
                     key={l.href}
                     href={l.href}
-                    className="text-sm font-bold px-3 py-2 rounded-full transition-all duration-200 hover:scale-105"
+                    className="text-xl font-bold px-3 py-2 rounded-full transition-all duration-200 hover:scale-105"
                     style={{
                       color:
                         pathname === l.href
@@ -157,7 +156,7 @@ export default function NavBar() {
                 {/* ENQUIRE NOW */}
                 <Link
                   href="/admissions"
-                  className="text-sm font-extrabold px-5 py-2.5 rounded-full shadow-md ml-2 hover:scale-105 transition-transform"
+                  className="text-sm font-extrabold px-3 py-2.5 rounded-full shadow-md ml-4 hover:scale-105 transition-transform"
                   style={{
                     backgroundColor: C.red,
                     color: "#ffffff",
