@@ -19,29 +19,85 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Revi's Group Tuitions | Std V-X Tuitions in Kalyan (W), Since 2008",
+  metadataBase: new URL("https://www.revisgrouptuitions.com"),
+
+  title: {
+    default: "Revi's Group Tuitions | Std V-X Tuitions in Kalyan West",
+    template: "%s | Revi's Group Tuitions",
+  },
+
   description:
-    "Revi's Group Tuitions, Khadakpada, Kalyan (West) — Std V to X, State Board & CBSE. 20+ years of teaching experience, small batches, consistently 100% SSC results. Call 93210 16779.",
+    "Revi's Group Tuitions in Khadakpada, Kalyan West - Std V to X tuition classes for State Board and CBSE students. Small batches, personal attention and 20+ years of teaching experience.",
+
   keywords: [
     "Revi's Group Tuitions",
-    "tuition classes Kalyan",
-    "SSC tuition Khadakpada",
-    "Std 5th to 10th tuition Kalyan West",
+    "tuition classes in Kalyan",
+    "tuition classes in Kalyan West",
+    "tuition classes Khadakpada",
+    "SSC tuition Kalyan",
+    "Std 5th to 10th tuition Kalyan",
     "CBSE tuition Kalyan",
     "State Board tuition Kalyan",
+    "SSC classes Khadakpada",
+    "school tuition classes Kalyan West",
   ],
+
+  authors: [{ name: "Revi's Group Tuitions" }],
+  creator: "Revi's Group Tuitions",
+  publisher: "Revi's Group Tuitions",
+
+  alternates: {
+    canonical: "https://www.revisgrouptuitions.com",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
   openGraph: {
-    title: "Revi's Group Tuitions | Std V-X, Kalyan (W), Since 2008",
+    type: "website",
+    locale: "en_IN",
+    url: "https://www.revisgrouptuitions.com",
+    siteName: "Revi's Group Tuitions",
+    title: "Revi's Group Tuitions | Std V-X Tuitions in Kalyan West",
     description:
-      "20+ years of teaching experience. Small batches. Consistently 100% SSC results. Std V to X, State Board & CBSE.",
+      "Std V to X tuition classes in Kalyan West for State Board and CBSE students. Small batches, personal attention and 20+ years of teaching experience.",
+    images: [
+      {
+        url: "/images/family.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Revi's Group Tuitions - Kalyan West",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Revi's Group Tuitions | Kalyan West",
+    description:
+      "Std V to X tuition classes for State Board and CBSE students in Kalyan West.",
     images: ["/images/family.jpg"],
   },
+
+  category: "Education",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
-      <body style={{ fontFamily: "var(--font-inter)" }} className="bg-white text-[#1C2430]">
+      <body
+        style={{ fontFamily: "var(--font-inter)" }}
+        className="bg-white text-[#1C2430]"
+      >
         <NavBar />
         {children}
         <Footer />
