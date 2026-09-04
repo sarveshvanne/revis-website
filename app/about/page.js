@@ -4,9 +4,19 @@ import { C, disp } from "@/lib/theme";
 import { Ribbon, Eyebrow, GradButton } from "@/components/UI";
 
 export const metadata = {
-  title: "About Us | Revi's Group Tuitions",
+  title: "About Revi's Group Tuitions | Kalyan West",
   description:
-    "Revi's Group Tuitions was established in 2008 by Reshama V. Vanne and Vijay R. Vanne, bringing 20+ years of teaching experience to Khadakpada, Kalyan (West).",
+    "Learn about Revi's Group Tuitions in Khadakpada, Kalyan West. Established in 2008 by Reshama Teacher and Vijay Sir, with 20+ years of teaching experience for Std V to X students.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Revi's Group Tuitions | Kalyan West",
+    description:
+      "Learn about Revi's Group Tuitions in Khadakpada, Kalyan West. Established in 2008 with 20+ years of teaching experience for Std V to X students.",
+    url: "/about",
+    type: "website",
+  },
 };
 
 export default function AboutPage() {
